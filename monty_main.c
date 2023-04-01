@@ -1,9 +1,3 @@
-/*
- * File name:	monty_main.c
- * Authors:	Luis Miguel Vargas
- *		Robinson Montes
- */
-
 #include "monty.h"
 
 /**
@@ -12,6 +6,7 @@
  * @av: The pointer to an array of inputed arguments.
  * Return: Always 0 (on Success).
  */
+
 int main(int ac, char **av)
 {
 	FILE *fd = NULL;
