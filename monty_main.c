@@ -1,29 +1,34 @@
 #include "monty.h"
 
 /**
- * main - The entry point function for Monty Interpreter.
- * @ac: The number of arguments.
- * @av: The pointer to an array of inputed arguments.
- * Return: Always 0 (on Success).
+ * main - The entrance of the monty program
+ * @ac: argument count
+ * @av: the arguments from the CLI
+ *
+ * Return: exit_status
  */
 
 int main(int ac, char **av)
 {
-	FILE *fd = NULL;
+	FILE *file;
 	int exit_status = EXIT_SUCCESS;
+	char *filename;
 
 	if (ac != 2)
-		return (usage_error(1));
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 
-	fd = fopen(av[1], "r");
-	if (fd == NULL)
-		return (open_error(av[1]));
+	filename = av[1];
+	file = fopen(filename, "r");
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		exit(EXIT_FAILURE);
+	}
 
-	exit_status = monty_run(fd);
-	fclose(fd);
+	exit_status = check_line(file);
+	fclose(file);
 	return (exit_status);
-		open_error(av[1]);
-	monty_run(fd);
-	exit(EXIT_SUCCESS);
-	return (0);
 }
