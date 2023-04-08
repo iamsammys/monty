@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * check_line - function to read lines in file.
@@ -10,8 +11,7 @@ int check_line(FILE *file)
 {
 	char *line = NULL, **token, *delim = " \t\n\b";
 	size_t size = 0;
-	ssize_t read_line;
-	int line_num = 0, exit_status = EXIT_SUCCESS, i = 0;
+	int line_num = 0, exit_status = EXIT_SUCCESS;
 	stack_t *stack = NULL;
 
 	while (getline(&line, &size, file) != -1)
