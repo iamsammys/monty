@@ -116,7 +116,7 @@ void pint(stack_t **stack, unsigned int line_num)
 /**
  * pop - removes the top of the stack
  * @stack: the stack to pint the top
- * @line_num: the line of the instruction
+ * @line_number: the line of the instruction
  *
  * Return: void
  */
