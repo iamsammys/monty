@@ -48,4 +48,5 @@ int push(char **token, stack_t **stack, int line_num);
 void stack_free(stack_t **stack);
 int instruction(char **token, stack_t **stack, int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 #endif

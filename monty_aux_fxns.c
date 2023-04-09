@@ -88,3 +88,27 @@ void pall(stack_t **stack, unsigned int line_number)
 		}
 	}
 }
+
+/**
+ * pint - prints the top of the stack to the stdout
+ * @stack: the stack to pint the top
+ * @line_num: the line of the instruction
+ *
+ * Return: void
+ */
+
+void pint(stack_t **stack, unsigned int line_num)
+{
+	stack_t *tmp = NULL;
+
+	tmp = *stack;
+
+	if (!tmp)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+		stack_free(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	fprintf(stdout, "%d\n", tmp->n);
+}

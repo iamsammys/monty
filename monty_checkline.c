@@ -94,6 +94,7 @@ int instruction(char **token, stack_t **stack, int line_num)
 
 	instruction_t op_code[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{"null", NULL}
 	};
 
