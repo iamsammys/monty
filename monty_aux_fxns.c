@@ -112,3 +112,26 @@ void pint(stack_t **stack, unsigned int line_num)
 
 	fprintf(stdout, "%d\n", tmp->n);
 }
+
+/**
+ * pop - removes the top of the stack
+ * @stack: the stack to pint the top
+ * @line_num: the line of the instruction
+ *
+ * Return: void
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = NULL;
+
+	if (!*stack)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*stack)->next)
+		tmp = (*stack)->next;
+	free(*stack);
+	*stack = tmp;
+}
