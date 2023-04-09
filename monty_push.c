@@ -28,7 +28,7 @@ int push(char **token, stack_t **stack, int line_num)
 			i++;
 			continue;
 		}
-		
+
 		if (token[1][i] < '0' || token[1][i] > '9')
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_num);
