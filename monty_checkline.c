@@ -96,10 +96,11 @@ int instruction(char **token, stack_t **stack, int line_num)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (strcmp(op_code[i].opcode, token[0]) == 0)
 		{
